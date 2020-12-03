@@ -1,12 +1,9 @@
 #!/usr/bin/env sh
 
-container=arthur-stace/tape
+host=localhost
+port=8000
 
-important_data="$1 .timewarrior .ssh .gnupg .password-store"
+important_data="$1 $HOME/.timewarrior $HOME/.ssh $HOME/.gnupg $HOME/.password-store"
 
-for dir in $important_data; do
-  workdir=$(echo $dir | sed -e 's/\.//')
-
-  docker run -v $HOME/$dir:/$workdir -it $container backup /$workdir
-done
+restic -r rest:http://$host:$port/data backup $important_data
 
