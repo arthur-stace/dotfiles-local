@@ -7,4 +7,5 @@ timew stop
 commit
 git push
 backup $workdir 
+exit
 
