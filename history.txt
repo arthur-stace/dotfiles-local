@@ -1,0 +1,16 @@
+ 4101  cd
+ 4102  cd dotfiles-local
+ 4103  g log
+ 4104  echo "change pass + add key + .git-template.local/hooks"
+ 4105  pass generate -c com.github/arthur-stace@pm.me 8
+ 4106  pass generate -c com.github/arthur-stace@pm.me 15
+ 4107  ssh-keygen -t rsa -C "arthur.stace@pm.me" -f ~/.ssh/com.github-$(date +%s)
+ 4108  cat com.github-1614892309.pub | pbcopy
+ 4109  cat .ssh/com.github-1614892309.pub | pbcopy
+ 4111  pass add com.github/1614892309.pub
+ 4112  pass show com.github/1614892309.pub
+ 4113  cat ~/.ssh/com.github-1614892309.pub | pbcopy
+ 4114  pass edit com.github/1614892309.pub
+ 4115  pass list
+ 4116  g remote -v
+ 4117  history
