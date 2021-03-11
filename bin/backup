@@ -4,9 +4,5 @@ container=arthur-stace/tape
 
 important_data="$1 .timewarrior .ssh .gnupg .password-store"
 
-for dir in $important_data; do
-  workdir=$(echo $dir | sed -e 's/\.//')
-
-  docker run -v $HOME/$dir:/$workdir -it $container backup /$workdir
-done
+restic backup $important_data
 
