@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+input=$1
+
+gpg --decrypt $1
