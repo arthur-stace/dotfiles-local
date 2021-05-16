@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-container=arthur-stace/tape
+work=$1
 
-important_data="$1 .timewarrior .ssh .gnupg .password-store"
+source $work/.env
 
-restic backup $important_data
+restic backup $work
 
