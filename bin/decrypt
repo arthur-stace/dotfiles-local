@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
-input=$1
+pbpaste > /tmp/msg
 
-gpg --decrypt $1
+gpg --decrypt /tmp/msg
+
+rm -rf /tmp/msg
+
